@@ -37,6 +37,10 @@ $search-experience-card-border: 1px solid rgba(255, 255, 255, 0.08);
   @include typography.text-md(variables.$color-secondary-text);
 }
 
+.note {
+  @include typography.text-sm(variables.$color-muted-text);
+}
+
 .card {
   background: $search-experience-card-bg;
   border: $search-experience-card-border;
