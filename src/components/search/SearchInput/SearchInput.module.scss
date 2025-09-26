@@ -1,0 +1,114 @@
+@use 'styles/variables';
+@use 'styles/typography';
+
+$search-input-width: 100%;
+$search-input-height: 52px;
+$search-input-padding-x: variables.$space-lg;
+$search-input-padding-y: variables.$space-sm;
+$search-input-border-radius: variables.$radius-lg;
+$search-input-border-color: variables.$color-border;
+$search-input-bg: variables.$color-surface;
+$search-input-bg-hover: variables.$color-surface-alt;
+$search-input-bg-focus: rgba(variables.$color-accent, 0.08);
+$search-input-shadow: variables.$shadow-100;
+$search-input-transition: border-color variables.$transition-duration-base variables.$transition-easing-standard,
+  background-color variables.$transition-duration-base variables.$transition-easing-standard,
+  box-shadow variables.$transition-duration-base variables.$transition-easing-standard;
+$search-input-icon-gap: variables.$space-sm;
+$search-input-icon-size: 20px;
+$search-input-clear-gap: variables.$space-sm;
+$search-input-clear-size: 28px;
+
+.root {
+  position: relative;
+  width: $search-input-width;
+}
+
+.field {
+  width: $search-input-width;
+  height: $search-input-height;
+  padding: $search-input-padding-y $search-input-padding-x;
+  padding-left: calc($search-input-padding-x + $search-input-icon-size + $search-input-icon-gap);
+  border-radius: $search-input-border-radius;
+  border: 1px solid $search-input-border-color;
+  background-color: $search-input-bg;
+  color: variables.$color-primary-text;
+  box-shadow: $search-input-shadow;
+  outline: none;
+  transition: $search-input-transition;
+
+  &::placeholder {
+    color: variables.$color-muted-text;
+  }
+
+  &:hover {
+    background-color: $search-input-bg-hover;
+  }
+
+  &:focus {
+    border-color: variables.$color-accent;
+    background-color: $search-input-bg-focus;
+    box-shadow: variables.$shadow-200;
+  }
+}
+
+.icon {
+  position: absolute;
+  inset-inline-start: $search-input-padding-x;
+  inset-block-start: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: $search-input-icon-size;
+  height: $search-input-icon-size;
+  color: variables.$color-muted-text;
+}
+
+.clearButton {
+  position: absolute;
+  inset-inline-end: variables.$space-md;
+  inset-block-start: 50%;
+  transform: translateY(-50%);
+  width: $search-input-clear-size;
+  height: $search-input-clear-size;
+  border: none;
+  border-radius: 50%;
+  background-color: transparent;
+  color: variables.$color-secondary-text;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: color variables.$transition-duration-fast variables.$transition-easing-standard,
+    background-color variables.$transition-duration-fast variables.$transition-easing-standard;
+
+  &:hover {
+    color: variables.$color-primary-text;
+    background-color: rgba(variables.$color-secondary-text, 0.12);
+  }
+
+  &:focus-visible {
+    outline: 2px solid variables.$color-accent;
+    outline-offset: 2px;
+  }
+}
+
+.spinner {
+  position: absolute;
+  inset-inline-end: calc(variables.$space-md + $search-input-clear-size + $search-input-clear-gap);
+  inset-block-start: 50%;
+  transform: translateY(-50%);
+  width: $search-input-icon-size;
+  height: $search-input-icon-size;
+  border-radius: 50%;
+  border: 2px solid rgba(variables.$color-accent, 0.2);
+  border-top-color: variables.$color-accent;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: translateY(-50%) rotate(360deg);
+  }
+}

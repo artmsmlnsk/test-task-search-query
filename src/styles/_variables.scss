@@ -1,0 +1,27 @@
+$color-primary-bg: #101423;
+$color-secondary-bg: #1b2135;
+$color-surface: #242b43;
+$color-surface-alt: #2f3754;
+$color-border: #3c4569;
+$color-divider: rgba(255, 255, 255, 0.08);
+$color-primary-text: #f5f7ff;
+$color-secondary-text: #c4c8d7;
+$color-muted-text: #9096ac;
+$color-accent: #7b8cff;
+
+$space-xs: 8px;
+$space-sm: 12px;
+$space-md: 16px;
+$space-lg: 24px;
+$space-xl: 32px;
+
+$radius-sm: 8px;
+$radius-md: 12px;
+$radius-lg: 18px;
+
+$shadow-100: 0 6px 24px rgba(1, 7, 44, 0.18);
+$shadow-200: 0 18px 36px rgba(1, 7, 44, 0.24);
+
+$transition-duration-fast: 120ms;
+$transition-duration-base: 200ms;
+$transition-easing-standard: cubic-bezier(0.4, 0, 0.2, 1);

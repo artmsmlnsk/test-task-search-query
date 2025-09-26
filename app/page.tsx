@@ -1,3 +1,5 @@
+import { SearchExperience } from '@/components/search';
+
 export default function Home() {
-  return <div>сетап проекта</div>;
+  return <SearchExperience />;
 }

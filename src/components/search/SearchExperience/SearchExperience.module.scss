@@ -1,0 +1,49 @@
+@use 'styles/variables';
+@use 'styles/typography';
+
+$search-experience-max-width: 720px;
+$search-experience-padding-inline: variables.$space-xl;
+$search-experience-padding-block: variables.$space-xl;
+$search-experience-gap: variables.$space-xl;
+$search-experience-card-gap: variables.$space-lg;
+$search-experience-card-padding: variables.$space-xl;
+$search-experience-card-radius: variables.$radius-lg;
+$search-experience-card-bg: rgba(16, 20, 35, 0.72);
+$search-experience-card-border: 1px solid rgba(255, 255, 255, 0.08);
+
+.root {
+  display: flex;
+  justify-content: center;
+  padding: $search-experience-padding-block $search-experience-padding-inline;
+}
+
+.container {
+  display: grid;
+  gap: $search-experience-gap;
+  width: 100%;
+  max-width: $search-experience-max-width;
+}
+
+.hero {
+  display: grid;
+  gap: variables.$space-sm;
+}
+
+.title {
+  @include typography.heading-xl();
+}
+
+.description {
+  @include typography.text-md(variables.$color-secondary-text);
+}
+
+.card {
+  background: $search-experience-card-bg;
+  border: $search-experience-card-border;
+  border-radius: $search-experience-card-radius;
+  padding: $search-experience-card-padding;
+  display: grid;
+  gap: $search-experience-card-gap;
+  box-shadow: variables.$shadow-100;
+  backdrop-filter: blur(14px);
+}
