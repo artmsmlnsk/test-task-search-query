@@ -1,8 +1,18 @@
 'use client';
 
+import { Suspense } from 'react';
+
 import { useSearch } from '@/hooks/useSearch';
 
 export default function TestSearchPage() {
+  return (
+    <Suspense fallback={<Fallback />}>
+      <TestSearchContent />
+    </Suspense>
+  );
+}
+
+function TestSearchContent() {
   const { query, setQuery, clearQuery, results, status, error, activeQuery } = useSearch();
 
   return (
@@ -37,4 +47,8 @@ export default function TestSearchPage() {
       </ul>
     </main>
   );
+}
+
+function Fallback() {
+  return <main>Загрузка тестовой страницы…</main>;
 }
